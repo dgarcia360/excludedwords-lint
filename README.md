@@ -45,13 +45,13 @@ Matches any line that contains the word "Simply".
 
 ## Search for words using a custom regular expression
 
-Matches any line that starts with "The".
+Matches any line that starts with "Simply".
 
-    $> excluded-words-lint ^The --regex
+    $> excluded-words-lint ^Simply --regex
     
 ## Search for words and throw an error when found
 
-Automate your docs! Include the option ``throw`` when integrating the extension with TravisCI.
+Automate your docs! Include the option ``throw`` when integrating the command line tool with TravisCI.
 
     $> excluded-words-lint simply --throw
     
