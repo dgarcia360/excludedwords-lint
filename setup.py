@@ -7,7 +7,7 @@ dependencies = ['click']
 
 setup(
     name='excludedwordslint',
-    version='0.1.0',
+    version='0.1.1',
     url='https://github.com/dgarcia360/excludedwords-lint',
     license='BSD',
     author='David Garcia',
