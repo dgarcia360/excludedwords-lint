@@ -49,7 +49,7 @@ def test_cli_with_multiple_words(runner):
 
 def test_cli_without_words(runner):
     result = runner.invoke(cli.main)
-    assert result.exit_code == 2
+    assert result.exit_code == 1
     assert result.exception
 
 
@@ -155,3 +155,28 @@ def test_cli_error_in_regex(runner):
     expected_output = 'Error: The regular expression is invalid.'
     assert result.output.strip() == expected_output
 
+
+def test_cli_with_config_file(runner):
+    result = runner.invoke(cli.main, ['--path', 'tests/example/second_level', '--config', 'tests/example/.excludedwords-custom'])
+    assert result.exit_code == 0
+    expected_output = 'tests/example/second_level/2.md line 2: Morbi finibus purus finibus ultricies consectetur.\n' \
+        '\ntests/example/second_level/2.md line 8: Proin lectus tellus, sodales in scelerisque non, hendrerit ut lectus.'
+    assert result.output.strip() == expected_output
+
+
+def test_cli_with_config_file_overlaps_argument(runner):
+    result = runner.invoke(cli.main, ['ante', '--path', 'tests/example/second_level', '--config', 'tests/example/.excludedwords-custom'])
+    assert result.exit_code == 0
+    expected_output = 'tests/example/second_level/2.md line 2: Morbi finibus purus finibus ultricies consectetur.\n' \
+        '\ntests/example/second_level/2.md line 8: Proin lectus tellus, sodales in scelerisque non, hendrerit ut lectus.'
+    assert result.output.strip() == expected_output
+
+
+def test_cli_load_words_file(runner):
+    words = cli._load_words_config('tests/example/.excludedwords-custom')
+    assert words == 'finibus,Proin'
+
+
+def test_cli_load_words_invalid_file(runner):
+    words = cli._load_words_config('tests/example/.excludedwords-empty')
+    assert not words
