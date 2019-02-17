@@ -4,3 +4,10 @@ python:
 - '3.5'
 install: pip install tox-travis
 script: tox
+deploy:
+  provider: pypi
+  user: dgarcia360
+  password:
+    secure: ZXojS6f8xIZ9XHhDWQKq6PUfovihGO7u4CTcWCJRv7hfn6pk+Ah2m9bs0FMhYrmM2RmMigyJ0JbaKYqkhiRfv7htWMjoXoF82ZYdAQvtqEiJiJoQZSwPm88mDDRmdaTtTJJajXNu56Hzu3vQ69ADMtoFMKGy2z8/z3IttzoV0GL2K9jxJI2KbTKG/2mhN6QEwgb3ip5UQxz/39zvi08GnFr+Lrnb0lvApvLGu2w4j4MrsZveSpvdJU3rw0hDo/cB8kNigrEiJOjFZsl8mlKewcM3hEqs2bFnDZM+ZDUHWaGN1YI0Ul/9tBxzweieIhKLft2pS7YJt/bNk4sWJYt1OpLS1RaPngUUMkvoEs5gU50S1BfIsspvrJTo51eLzrBaBHmIMsST34K/nHxRUlbHk/YjdHIT7YgKlxd+1t8045F/kQXc6YZNVhgZFnQDgtSCipF0pHwnT13peBHfdz11AX2wmwWKuZK9Va0sIZRmS6RaTf+PArehTwr8pzvZMp1rbyVXzun/aTMUY/NEVVB9Fl0pSGKYd01NRjNnNYascRBV9Ze/bQ9SccMnoeO/8Rx7fEqK97KiITrr3CdNFTvaaqdoE4WNhu/rRaTmtPetIXRpb9EWBz5G/dy+I0U88/ROsvjJrHoLcQxHUlQDef6ijYdnqf3dEJqeh1BuWHIAUQA=
+  on:
+    branch: master

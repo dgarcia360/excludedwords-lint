@@ -1,6 +1,8 @@
 # Excluded Words Lint
 
-Search for words in your project.
+[![Build Status](https://travis-ci.org/dgarcia360/excludedwords-lint.svg?branch=master)](https://travis-ci.org/dgarcia360/excludedwords-lint)
+
+Automate the search of unnecessary words in your project.
 
 Inspired in Jim's Fisher talk [Don’t Say “Simply”](http://www.writethedocs.org/videos/prague/2018/don-t-say-simply-jim-fisher/) (Write The Docs 2018).
 
@@ -49,14 +51,18 @@ Matches any line that starts with "Simply".
 
     $> excluded-words-lint ^Simply --regex
     
+## Import words from a config file
+
+Get an example configuration file [here](https://gist.github.com/dgarcia360/f89b0d591882aabb7b8b07c71ae4aad1).
+
+    $> excluded-words-lint --config=config/.excludedwords
+    
 ## Search for words and throw an error when found
 
-Automate your docs! Include the option ``throw`` when integrating the command line tool with TravisCI.
+Include the option ``throw`` when integrating the command line tool with TravisCI.
 
     $> excluded-words-lint simply --throw
     
 # License
 
 [MIT License](LICENSE.md)
-
-
