@@ -1,5 +1,6 @@
 # Excluded Words Lint
 
+[![PyPI version](https://badge.fury.io/py/excludedwordslint.svg)](https://badge.fury.io/py/excludedwordslint)
 [![Build Status](https://travis-ci.org/dgarcia360/excludedwords-lint.svg?branch=master)](https://travis-ci.org/dgarcia360/excludedwords-lint)
 
 Automate the search of unnecessary or incorrectly written words in your project.
