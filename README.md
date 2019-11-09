@@ -84,6 +84,6 @@ Contributions are welcome and appreciated! Check [CONTRIBUTING.md](CONTRIBUTING.
 
 ## License
 
-Copyright (c) 2018 David Garcia ([@dgarcia360](https://davidgarcia.dev>)).
+Copyright (c) 2019 David Garcia ([@dgarcia360](https://davidgarcia.dev>)).
 
 Licensed under MIT license (see [LICENSE.md](LICENSE.md) for details)
