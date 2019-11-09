@@ -5,11 +5,11 @@
 
 Automate the search of unnecessary or incorrectly written words in your project.
 
-# Installation
+## Installation
 
     $ pip install excludedwordslint
 
-# Usage    
+## Usage    
     
 excluded-words-lint [OPTIONS] WORDS
 
@@ -23,24 +23,24 @@ excluded-words-lint [OPTIONS] WORDS
 | -t, --throw           | Throws an exception if some of the words are found. |
 | --help                | Show this message and exit.                         |
 
-# Examples
+## Examples
 
 The examples are based in Jim's Fisher talk [Don’t Say “Simply”](http://www.writethedocs.org/videos/prague/2018/don-t-say-simply-jim-fisher/) (Write The Docs 2018). 
 
-## Search for substrings
+### Search for substrings
 
 Matches any line that contains the substrings "simply" or "simple". It only takes into account files inside "docs" folder with rst or md extensions.
 
     $> excluded-words-lint simply,simple --path 
     docs --extensions rst,md 
 
-## Search for complete words
+### Search for complete words
 
 Matches any line that contains the word "simply".
 
     $> excluded-words-lint simply --match-word
 
-## Search for case sensitive words
+### Search for case sensitive words
 
 Matches any line that contains the word "Simply".
 
@@ -56,24 +56,34 @@ You can use it as well to automate the search of words incorrectly written that 
 $> excluded-words-lint javascript,Javascript, javaScript ---match-word --match-case 
 docs --extensions md 
 
-## Search for words using a custom regular expression
+### Search for words using a custom regular expression
 
 Matches any line that starts with "Simply".
 
     $> excluded-words-lint ^Simply --regex
     
-## Import words from a config file
+### Import words from a config file
 
 Get an example configuration file [here](https://gist.github.com/dgarcia360/f89b0d591882aabb7b8b07c71ae4aad1).
 
     $> excluded-words-lint --config=config/.excludedwords
     
-## Search for words and throw an error when found
+### Search for words and throw an error when found
 
 Include the option ``throw`` when integrating the command line tool with TravisCI.
 
     $> excluded-words-lint simply --throw
     
-# License
+## Roadmap
 
-[MIT License](LICENSE.md)
+See the [open issues](https://github.com/dgarcia360/excludedwords-lint/issues) for a list of proposed features.
+
+## Contributing
+
+Contributions are welcome and appreciated! Check [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
+## License
+
+Copyright (c) 2018 David Garcia ([@dgarcia360](https://davidgarcia.dev>)).
+
+Licensed under MIT license (see [LICENSE.md](LICENSE.md) for details)
